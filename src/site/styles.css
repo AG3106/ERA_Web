@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background: #0d110e;
+  }
+  body {
+    @apply bg-ink font-sans text-chalk antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+  ::selection {
+    background: #d8ff3e;
+    color: #0d110e;
+  }
+  :focus-visible {
+    outline: 2px solid #d8ff3e;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-5 sm:px-8 lg:px-12;
+  }
+  /* Condensed display headline */
+  .display {
+    @apply font-display font-extrabold uppercase leading-[0.82] tracking-[-0.01em];
+  }
+  .label {
+    @apply font-mono text-[11px] font-medium uppercase tracking-[0.14em];
+  }
+  .btn {
+    @apply inline-flex items-center gap-3 px-6 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.14em] transition-colors duration-200;
+  }
+  .btn-volt {
+    @apply btn bg-volt text-ink hover:bg-chalk;
+  }
+  .btn-ink {
+    @apply btn bg-ink text-chalk hover:bg-turf;
+  }
+  .btn-line {
+    @apply btn border-2 border-current hover:bg-chalk hover:text-ink;
+  }
+
+  /* Mowed-pitch stripes */
+  .turf {
+    background-color: #1c5632;
+    background-image: repeating-linear-gradient(
+      90deg,
+      #1c5632 0 90px,
+      #205f37 90px 180px
+    );
+  }
+  .turf-v {
+    background-color: #1c5632;
+    background-image: repeating-linear-gradient(
+      180deg,
+      #1c5632 0 70px,
+      #205f37 70px 140px
+    );
+  }
+  /* Engineering grid with a faint volt glow: the neutral dark backdrop */
+  .tech {
+    background-color: #101512;
+    background-image: radial-gradient(ellipse 55% 60% at 85% 10%, rgba(216, 255, 62, 0.1), transparent 70%),
+      radial-gradient(ellipse 45% 55% at 5% 95%, rgba(255, 90, 31, 0.08), transparent 70%),
+      linear-gradient(rgba(243, 240, 230, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(243, 240, 230, 0.045) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 56px 56px, 56px 56px;
+  }
+
+  /* RoboMaster arena: steel floor grid lit by red and blue team bases */
+  .arena {
+    background-color: #111418;
+    background-image: radial-gradient(ellipse 45% 70% at 0% 50%, rgba(255, 60, 60, 0.28), transparent 70%),
+      radial-gradient(ellipse 45% 70% at 100% 50%, rgba(60, 140, 255, 0.28), transparent 70%),
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  }
+
+  /* Robot learning lab: dot-matrix with a cool cyan/violet glow */
+  .lab {
+    background-color: #0f0d1c;
+    background-image: radial-gradient(ellipse 60% 60% at 75% 30%, rgba(120, 90, 255, 0.3), transparent 70%),
+      radial-gradient(ellipse 50% 50% at 15% 85%, rgba(40, 220, 230, 0.18), transparent 70%),
+      radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1.4px);
+    background-size: 100% 100%, 100% 100%, 22px 22px;
+  }
+
+  .paper {
+    @apply bg-paper text-ink;
+  }
+
+  /* LED board: dot-matrix on black */
+  .led {
+    background-color: #050605;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1.3px);
+    background-size: 5px 5px;
+  }
+
+  /* Ticket with punched side notches */
+  .ticket {
+    -webkit-mask: radial-gradient(circle 12px at 0 var(--notch, 50%), transparent 98%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle 12px at 100% var(--notch, 50%), transparent 98%, #000) right / 51% 100% no-repeat;
+    mask: radial-gradient(circle 12px at 0 var(--notch, 50%), transparent 98%, #000) left / 51% 100% no-repeat,
+      radial-gradient(circle 12px at 100% var(--notch, 50%), transparent 98%, #000) right / 51% 100% no-repeat;
+  }
+
+  .field-line {
+    @apply w-full border-0 border-b-2 border-chalk/40 bg-transparent px-0 py-3 text-lg text-chalk placeholder:text-chalk/40 outline-none transition-colors focus:border-volt;
+  }
+}
+
+/* Grain that sits over everything, gives the flat colours some tooth */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.insta-embed {
+  min-height: 200px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.2;
+  }
+}
+.blink {
+  animation: blink 1.2s steps(1) infinite;
+}
