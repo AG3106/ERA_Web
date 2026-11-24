@@ -44,7 +44,8 @@ const About = () => {
               Since 2018 we have designed every part of our robots ourselves, from omni-wheel drivetrains and
               solenoid kickers to real-time vision, localisation and team strategy. After podium finishes at the
               DJI RoboMaster AI Challenge, we became the first Indian team to qualify for the RoboCup Middle
-              Size League. Next, we want to bring RoboCup-level autonomous robotics to more students in India.
+              Size League. Now we are moving into physical AI: robot arms that learn manipulation skills from
+              data and follow plain-language instructions.
             </Reveal>
 
             <ul className="mt-10 flex flex-wrap gap-2">
