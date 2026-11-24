@@ -4,18 +4,8 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import hero2560 from '../../assets/optimized/hero-2560.jpg';
 import hero1280 from '../../assets/optimized/hero-1280.jpg';
 import { links } from '../data/links';
-import { Arrow, Marquee, SplitText, easeOut } from '../components/motion';
+import { Arrow, SplitText, easeOut } from '../components/motion';
 import { scrollToTarget, useLenis } from '../components/SmoothScroll';
-
-// Achievements pulled from src/constants, shown on the LED ticker.
-const ticker = [
-  '1st Indian team to qualify for RoboCup MSL',
-  'Gold · Inter IIT Tech Meet 14.0',
-  '3rd overall · DJI RoboMaster AI Challenge 2022',
-  'Top 5 technical proposal · ICRA 2022',
-  '3rd overall · DJI RoboMaster 2019',
-  'Papers at IEEE RO-MAN & IEEE/SICE SII',
-];
 
 const Hero = () => {
   const ref = useRef(null);
@@ -116,21 +106,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <motion.div
-        className="led relative z-10 border-y-2 border-black py-3"
-        initial={{ y: '100%' }}
-        animate={{ y: '0%' }}
-        transition={{ delay: 1.8, duration: 0.6, ease: easeOut }}
-      >
-        <Marquee duration={40}>
-          {ticker.map((t) => (
-            <span key={t} className="flex items-center gap-6 pr-6 font-mono text-sm font-medium uppercase tracking-[0.1em] text-volt">
-              {t}
-              <span className="text-flare">●</span>
-            </span>
-          ))}
-        </Marquee>
-      </motion.div>
     </section>
   );
 };
