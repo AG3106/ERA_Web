@@ -41,9 +41,10 @@ const About = () => {
               text="A multidisciplinary group of undergraduates at IIT Kanpur, building intelligent robots that see, think and act in messy real-world environments."
             />
             <Reveal delay={0.1} className="mt-8 max-w-2xl text-lg leading-relaxed text-ink/75">
-              Working closely with faculty, we cover the whole robotics stack. Our work spans research,
-              government-funded projects and international competitions. Beyond competing, we want to grow
-              a strong autonomous robotics community and help move the field forward in India.
+              Since 2018 we have designed every part of our robots ourselves, from omni-wheel drivetrains and
+              solenoid kickers to real-time vision, localisation and team strategy. After podium finishes at the
+              DJI RoboMaster AI Challenge, we became the first Indian team to qualify for the RoboCup Middle
+              Size League. Next, we want to bring RoboCup-level autonomous robotics to more students in India.
             </Reveal>
 
             <ul className="mt-10 flex flex-wrap gap-2">

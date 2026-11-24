@@ -6,7 +6,7 @@ import { Arrow, Reveal, SectionHeading, SplitText } from '../components/motion';
 import { useLenis } from '../components/SmoothScroll';
 
 export const projectIntro =
-  'Before RoboCup MSL, we worked on many self-initiated and government-funded projects, and took part in international competitions and conferences that shaped who we are today.';
+  'Before RoboCup, ERA built PHASR, two generations of Dexter, an excavator and a BIRAC-funded wheelchair, alongside our RoboMaster robots. Each one taught us something our robots still use today.';
 
 const useIsDesktop = () => {
   const query = '(min-width: 1024px)';

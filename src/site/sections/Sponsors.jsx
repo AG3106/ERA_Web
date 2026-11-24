@@ -8,8 +8,8 @@ const Sponsors = () => (
     <div className="container-site">
       <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
         <SectionHeading num="05" kicker="Partners" title="Our sponsors" className="flex-1">
-          Our sponsors back our research, competitions and student-led engineering. Their support lets us
-          design, build and deploy autonomous robots, and represent IIT Kanpur on international stages.
+          ERA is run entirely by students. Our partners help pay for the motors, sensors, compute and
+          competition entries that let a student team from Kanpur take on the world&rsquo;s best robot football teams.
         </SectionHeading>
         <Reveal delay={0.2} className="flex shrink-0 flex-wrap gap-2">
           <a href={links.brochure} target="_blank" rel="noopener noreferrer" className="btn-volt">
