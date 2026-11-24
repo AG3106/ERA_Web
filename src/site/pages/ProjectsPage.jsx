@@ -1,6 +1,6 @@
 import { PageHeader } from '../components/motion';
 import { ProjectStack, projectIntro } from '../sections/Projects';
-import headerImg from '../assets/projects-header.png';
+import headerImg from '../assets/projects-header.webp';
 
 const ProjectsPage = () => (
   <>

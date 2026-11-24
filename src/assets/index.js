@@ -9,7 +9,7 @@ import logo from './logo/logo.gif';
 import logotext from './logo/logo-text-black.png';
 
 // About
-import dribble from './projects/Dribblerem.png';
+import dribble from './projects/Dribblerem.webp';
 
 // InstaHandle
 import send from './icons/send.png';
@@ -43,11 +43,11 @@ import prototyping from './icons/prototyping.png';
 // import rubyrails from './tech/rubyrails.png';
 
 // Projects
-import phasr from './projects/phasr.png';
-import dexter1 from './projects/dexter_1.png';
-import excavator from './projects/excavator.png';
-import dexter2 from './projects/dexter_2.png';
-import birac_wheelchair from './projects/birac_wheelchair.png';
+import phasr from './projects/phasr.webp';
+import dexter1 from './projects/dexter_1.webp';
+import excavator from './projects/excavator.webp';
+import dexter2 from './projects/dexter_2.webp';
+import birac_wheelchair from './projects/birac_wheelchair.webp';
 
 // Learning
 import decision from './learning/decision.png';

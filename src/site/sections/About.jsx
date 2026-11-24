@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import dribbler from '../../assets/projects/Dribblerem.png';
+import dribbler from '../../assets/projects/Dribblerem.webp';
 import { research, sponsorData } from '../../constants';
 import { links } from '../data/links';
 import { Arrow, Counter, PitchLines, Reveal, ScrollText, SectionHeading } from '../components/motion';

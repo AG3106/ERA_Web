@@ -255,6 +255,7 @@ export const PageHeader = ({ kicker, title, children, image }) => (
         <motion.img
           src={image}
           alt=""
+          fetchpriority="high"
           className="absolute inset-0 h-full w-full object-cover object-[50%_60%]"
           initial={{ opacity: 0, scale: 1.08 }}
           animate={{ opacity: 1, scale: 1 }}
