@@ -4,16 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: '#0d110e',
-        coal: '#161b17',
-        chalk: '#f3f0e6',
-        paper: '#e8e3d3',
-        turf: '#1c5632',
-        'turf-light': '#236a3e',
-        'turf-dark': '#123c22',
-        volt: '#d8ff3e',
+        // Night-stadium palette: navy sky (`ink`), floodlit white (`chalk`),
+        // a real green pitch (`turf`) and ERA blue as the accent (`volt`).
+        ink: '#0a0f1d',
+        coal: '#121a2e',
+        chalk: '#eef3fc',
+        paper: '#e1e9f6',
+        turf: '#1d5c35',
+        'turf-light': '#236b3f',
+        'turf-dark': '#133f24',
+        volt: '#4a86ff',
         flare: '#ff5a1f',
-        muted: '#6d7268',
+        muted: '#68728a',
       },
       fontFamily: {
         display: ['"Big Shoulders Display"', 'Impact', 'sans-serif'],

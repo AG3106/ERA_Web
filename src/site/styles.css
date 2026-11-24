@@ -6,18 +6,18 @@
 
 @layer base {
   html {
-    background: #0d110e;
+    background: #0a0f1d;
   }
   body {
     @apply bg-ink font-sans text-chalk antialiased;
     -webkit-tap-highlight-color: transparent;
   }
   ::selection {
-    background: #d8ff3e;
-    color: #0d110e;
+    background: #4a86ff;
+    color: #0a0f1d;
   }
   :focus-visible {
-    outline: 2px solid #d8ff3e;
+    outline: 2px solid #4a86ff;
     outline-offset: 3px;
   }
 }
@@ -48,28 +48,28 @@
 
   /* Mowed-pitch stripes */
   .turf {
-    background-color: #1c5632;
+    background-color: #1d5c35;
     background-image: repeating-linear-gradient(
       90deg,
-      #1c5632 0 90px,
-      #205f37 90px 180px
+      #1d5c35 0 90px,
+      #226a3d 90px 180px
     );
   }
   .turf-v {
-    background-color: #1c5632;
+    background-color: #1d5c35;
     background-image: repeating-linear-gradient(
       180deg,
-      #1c5632 0 70px,
-      #205f37 70px 140px
+      #1d5c35 0 70px,
+      #226a3d 70px 140px
     );
   }
   /* Engineering grid with a faint volt glow: the neutral dark backdrop */
   .tech {
-    background-color: #101512;
-    background-image: radial-gradient(ellipse 55% 60% at 85% 10%, rgba(216, 255, 62, 0.1), transparent 70%),
+    background-color: #0d1324;
+    background-image: radial-gradient(ellipse 55% 60% at 85% 10%, rgba(74, 134, 255, 0.18), transparent 70%),
       radial-gradient(ellipse 45% 55% at 5% 95%, rgba(255, 90, 31, 0.08), transparent 70%),
-      linear-gradient(rgba(243, 240, 230, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(243, 240, 230, 0.045) 1px, transparent 1px);
+      linear-gradient(rgba(238, 243, 252, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(238, 243, 252, 0.045) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 56px 56px, 56px 56px;
   }
 
@@ -96,9 +96,17 @@
     @apply bg-paper text-ink;
   }
 
+  /* Blueprint panel: chalk with a faint navy grid, used for stat strips */
+  .blueprint {
+    background-color: #eef3fc;
+    background-image: linear-gradient(rgba(10, 15, 29, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 15, 29, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
   /* LED board: dot-matrix on black */
   .led {
-    background-color: #050605;
+    background-color: #04060c;
     background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1.3px);
     background-size: 5px 5px;
   }
@@ -140,6 +148,9 @@ html.lenis body {
 .insta-embed {
   min-height: 200px;
 }
+.insta-embed:empty {
+  min-height: 0;
+}
 
 @keyframes blink {
   50% {
@@ -149,3 +160,7 @@ html.lenis body {
 .blink {
   animation: blink 1.2s steps(1) infinite;
 }
+
+/* Sideways swipe rows (mobile journey): scroll without a visible bar */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

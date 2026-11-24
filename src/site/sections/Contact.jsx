@@ -65,7 +65,7 @@ const Contact = () => {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="label border-2 border-chalk/40 px-3 py-2 transition-colors hover:border-volt hover:bg-volt hover:text-ink"
+                    className="label inline-flex min-h-[44px] items-center border-2 border-chalk/40 px-3 py-2 transition-colors hover:border-volt hover:bg-volt hover:text-ink"
                   >
                     {s.label}
                   </a>

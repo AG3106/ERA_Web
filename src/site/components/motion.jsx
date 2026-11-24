@@ -63,7 +63,7 @@ export const SplitText = ({ text, className, delay = 0, stagger = 0.05, animateO
 // Paragraph whose words brighten as it scrolls through the viewport.
 export const ScrollText = ({ text, className }) => {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.85', 'end 0.45'] });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.9', 'start 0.35'] });
   const words = text.split(' ');
   return (
     <p ref={ref} className={className}>
@@ -111,7 +111,7 @@ export const SectionHeading = ({ num, kicker, title, children, className = '', s
 );
 
 // Chalk pitch markings that draw themselves when scrolled into view.
-export const PitchLines = ({ className = '', variant = 'box' }) => {
+export const PitchLines = ({ className = '', variant = 'box', align = 'xMidYMid', strokeWidth = 3 }) => {
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
     show: (i) => ({
@@ -136,12 +136,12 @@ export const PitchLines = ({ className = '', variant = 'box' }) => {
   return (
     <motion.svg
       viewBox="0 0 1000 600"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio={`${align} slice`}
       aria-hidden
       className={`pointer-events-none ${className}`}
       fill="none"
       stroke="currentColor"
-      strokeWidth="3"
+      strokeWidth={strokeWidth}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -269,20 +269,20 @@ export const PageHeader = ({ kicker, title, children, image }) => (
         className="label mb-6 flex items-center gap-3 text-volt"
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
       >
         <span className="h-2 w-2 bg-volt" />
         {kicker}
       </motion.p>
       <h1 className="display text-[clamp(4rem,15vw,13rem)] text-chalk">
-        <SplitText text={title} animateOnMount delay={0.45} stagger={0.08} />
+        <SplitText text={title} animateOnMount delay={0.15} stagger={0.08} />
       </h1>
       {children && (
         <motion.div
           className="mt-8 max-w-2xl text-lg leading-relaxed text-chalk/85"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8, ease: easeOut }}
+          transition={{ delay: 0.4, duration: 0.6, ease: easeOut }}
         >
           {children}
         </motion.div>

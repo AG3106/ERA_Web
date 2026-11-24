@@ -13,10 +13,10 @@ const categoryStyle = {
 
 export const Ball = ({ className = '' }) => (
   <svg viewBox="0 0 100 100" className={className} aria-hidden>
-    <circle cx="50" cy="50" r="47" fill="#f3f0e6" stroke="#0d110e" strokeWidth="4" />
-    <path d="M50 30 L68 43 L61 64 L39 64 L32 43 Z" fill="#0d110e" />
-    <path d="M50 30 V5 M68 43 L91 35 M61 64 L75 86 M39 64 L25 86 M32 43 L9 35" stroke="#0d110e" strokeWidth="4" />
-    <path d="M40 5 L50 12 L60 5 M84 22 L91 35 L96 50 M85 80 L75 86 L64 94 M36 94 L25 86 L15 80 M4 50 L9 35 L16 22" stroke="#0d110e" strokeWidth="4" fill="none" />
+    <circle cx="50" cy="50" r="47" fill="#eef3fc" stroke="#0a0f1d" strokeWidth="4" />
+    <path d="M50 30 L68 43 L61 64 L39 64 L32 43 Z" fill="#0a0f1d" />
+    <path d="M50 30 V5 M68 43 L91 35 M61 64 L75 86 M39 64 L25 86 M32 43 L9 35" stroke="#0a0f1d" strokeWidth="4" />
+    <path d="M40 5 L50 12 L60 5 M84 22 L91 35 L96 50 M85 80 L75 86 L64 94 M36 94 L25 86 L15 80 M4 50 L9 35 L16 22" stroke="#0a0f1d" strokeWidth="4" fill="none" />
   </svg>
 );
 
@@ -42,6 +42,26 @@ const Ticket = ({ item, index }) => (
       <p className="mt-4 text-sm leading-relaxed text-ink/75">{item.description}</p>
     </div>
   </motion.article>
+);
+
+// Phones: the same ticket at about half the height. Year and category share a short
+// stub, so a dozen of them read as a list rather than a dozen screens.
+const CompactTicket = ({ item, index }) => (
+  <article className="ticket flex w-full flex-col bg-chalk text-ink" style={{ '--notch': '64px' }}>
+    <div className="flex h-16 items-center justify-between gap-3 px-5">
+      <p className="display text-[2.6rem] leading-none">{item.year}</p>
+      <div className="flex flex-col items-end gap-1">
+        <span className={`label px-2 py-0.5 ${categoryStyle[item.category] ?? 'bg-ink text-chalk'}`}>{item.category}</span>
+        <span className="label text-ink/50">No. {String(index + 1).padStart(3, '0')}</span>
+      </div>
+    </div>
+    <div className="mx-4 border-t-2 border-dashed border-ink/30" />
+    <div className="px-5 pb-4 pt-3">
+      <h3 className="display text-2xl leading-[0.95]">{item.title}</h3>
+      <p className="label mt-1 text-turf">{item.location}</p>
+      <p className="mt-2 text-sm leading-snug text-ink/75">{item.description}</p>
+    </div>
+  </article>
 );
 
 // The journey runs through three eras, each with its own backdrop.
@@ -72,7 +92,7 @@ const eras = [
     blurb: 'Fully autonomous robot football in the Middle Size League.',
     bg: 'turf',
     bgMobile: 'turf-v',
-    accent: 'text-volt',
+    accent: 'text-[#9ec0ff]',
     items: achievements.filter((a) => Number(a.year) >= 2023),
   },
   {
@@ -127,12 +147,12 @@ const LabLines = ({ className = '' }) => (
 
 const Wheel = ({ className = '' }) => (
   <svg viewBox="0 0 100 100" className={className} aria-hidden>
-    <circle cx="50" cy="50" r="46" fill="#1b1f25" stroke="#f3f0e6" strokeWidth="4" />
+    <circle cx="50" cy="50" r="46" fill="#1b1f25" stroke="#eef3fc" strokeWidth="4" />
     {[0, 45, 90, 135].map((a) => (
-      <rect key={a} x="44" y="8" width="12" height="26" rx="5" fill="#f3f0e6" transform={`rotate(${a} 50 50) rotate(45 50 21)`} />
+      <rect key={a} x="44" y="8" width="12" height="26" rx="5" fill="#eef3fc" transform={`rotate(${a} 50 50) rotate(45 50 21)`} />
     ))}
     {[180, 225, 270, 315].map((a) => (
-      <rect key={a} x="44" y="8" width="12" height="26" rx="5" fill="#f3f0e6" transform={`rotate(${a} 50 50) rotate(45 50 21)`} />
+      <rect key={a} x="44" y="8" width="12" height="26" rx="5" fill="#eef3fc" transform={`rotate(${a} 50 50) rotate(45 50 21)`} />
     ))}
     <circle cx="50" cy="50" r="10" fill="#ff5a1f" />
   </svg>
@@ -244,27 +264,41 @@ const HorizontalTrack = () => {
   );
 };
 
+// Phones: each era is a row of tickets you swipe sideways, with the next one peeking in.
 const VerticalList = () => (
   <div className="relative text-chalk md:hidden">
-    <div className="arena pt-24">
+    <div className="arena pt-20">
       <div className="container-site">
         <SectionHeading num="02" kicker="Year by year" title="The journey" />
       </div>
     </div>
     {eras.map((era, e) => (
-      <div key={era.id} className={`${era.bgMobile} relative overflow-hidden ${e === 0 ? 'pt-12' : 'pt-16'} ${e === eras.length - 1 ? 'pb-24' : 'pb-16'}`}>
+      <div key={era.id} className={`${era.bgMobile} relative overflow-hidden ${e === 0 ? 'pt-8' : 'pt-12'} ${e === eras.length - 1 ? 'pb-16' : 'pb-12'}`}>
         <div className="container-site">
-          <Reveal className="mb-8">
+          <Reveal className="mb-6">
             <EraCard era={era} />
           </Reveal>
-          <ol className="space-y-6">
-            {numbered[e].map(({ item, index }) => (
-              <Reveal as="li" key={`${item.year}-${item.title}`}>
-                <Ticket item={item} index={index} />
-              </Reveal>
-            ))}
-          </ol>
+          {numbered[e].length > 1 && (
+            <p className="label mb-3 flex items-center gap-2 text-chalk/60" aria-hidden>
+              {numbered[e].length} entries · swipe <span className="text-volt">→</span>
+            </p>
+          )}
         </div>
+        <ol
+          className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain px-5 pb-2 sm:px-8"
+          style={{ scrollPaddingInline: '1.25rem' }}
+          data-lenis-prevent-touch
+          aria-label={`${era.name} achievements`}
+        >
+          {numbered[e].map(({ item, index }) => (
+            <li
+              key={`${item.year}-${item.title}`}
+              className={`flex shrink-0 snap-start ${numbered[e].length > 1 ? 'w-[82%] max-w-[340px]' : 'w-full'}`}
+            >
+              <CompactTicket item={item} index={index} />
+            </li>
+          ))}
+        </ol>
       </div>
     ))}
   </div>

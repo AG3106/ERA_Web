@@ -266,7 +266,7 @@ const sponsorData = [
   {
     id: 'sponsor-1',
     name: 'IITK',
-    description: 'The Indian Institute of Technology Kanpur, supporting innovation, research, and technological excellence.',
+    description: 'Our home institute, where every ERA robot is designed, built and tested on our own pitch.',
     link: 'https://www.iitk.ac.in/',
     logo: iitk_logo,
   },
@@ -274,7 +274,7 @@ const sponsorData = [
   {
     id: 'sponsor-2',
     name: 'Noccarc',
-    description: 'Building advanced robotic and automation solutions to transform industrial processes.',
+    description: 'A robotics and medical-devices company incubated at IIT Kanpur, backing the next generation of builders on campus.',
     link: 'https://noccarc.com/',
     logo: noccarc_logo,
   },
@@ -282,7 +282,7 @@ const sponsorData = [
   {
     id: 'sponsor-3',
     name: 'Ansys',
-    description: 'Engineering simulation software that enables teams to design, test, and build innovative products.',
+    description: 'Simulation software we use to design and test robot hardware before we cut any metal.',
     link: 'https://www.ansys.com/en-in',
     logo: ansys_logo,
   },
@@ -290,7 +290,7 @@ const sponsorData = [
   {
     id: 'sponsor-4',
     name: 'IEEE',
-    description: 'A global technical community advancing technology, engineering, and innovation through research and collaboration.',
+    description: 'Publisher of our papers at IEEE RO-MAN 2019 and IEEE/SICE SII 2024.',
     link: 'https://www.ieee.org/',
     logo: ieee_logo,
   },
@@ -298,7 +298,7 @@ const sponsorData = [
   {
     id: 'sponsor-5',
     name: 'AWS',
-    description: 'Cloud computing infrastructure and services enabling teams to build, deploy, and scale technology.',
+    description: 'Cloud compute for training the perception and robot-learning models behind our robots.',
     link: 'https://aws.amazon.com/',
     logo: aws_logo,
   },
@@ -306,7 +306,7 @@ const sponsorData = [
   {
     id: 'sponsor-6',
     name: 'NVIDIA',
-    description: 'Accelerating robotics and artificial intelligence through powerful computing platforms and technologies.',
+    description: 'Jetson computers that run real-time YOLO detection of the ball, robots and goals on our MSL robots.',
     link: 'https://www.nvidia.com/',
     logo: nvidia_logo,
   },
@@ -314,7 +314,7 @@ const sponsorData = [
   {
     id: 'sponsor-7',
     name: 'DJI',
-    description: 'Developing advanced robotics, drones, and intelligent systems that push the boundaries of autonomous technology.',
+    description: 'Host of the RoboMaster AI Challenge, where ERA finished 3rd overall in 2019 and 2022.',
     link: 'https://www.dji.com/',
     logo: dji_logo,
   },
@@ -322,7 +322,7 @@ const sponsorData = [
   {
     id: 'sponsor-8',
     name: 'Hyundai',
-    description: 'Driving the future of mobility through robotics, autonomous systems, and innovative engineering.',
+    description: 'Awarded ERA the Hyundai Hope Scholarship 2025 for an innovative idea for the automobile industry.',
     link: 'https://www.hyundai.com/',
     logo: hyundai_logo,
   },

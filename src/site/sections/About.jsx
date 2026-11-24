@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import dribbler from '../../assets/projects/Dribblerem.png';
 import { research, sponsorData } from '../../constants';
 import { links } from '../data/links';
-import { Arrow, Counter, Reveal, ScrollText, SectionHeading } from '../components/motion';
+import { Arrow, Counter, PitchLines, Reveal, ScrollText, SectionHeading } from '../components/motion';
 
 const disciplines = [
   'Mechanical design',
@@ -31,7 +31,29 @@ const About = () => {
 
   return (
     <section id="about" className="paper relative overflow-hidden py-24 sm:py-32">
-      <div className="container-site">
+      {/* Background: a warm floodlight glow, a cool one opposite, a fading blueprint grid and a
+          chalked penalty box behind the CAD figure */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 48% 36% at 100% 0%, rgba(255,90,31,0.2), transparent 70%), radial-gradient(ellipse 52% 40% at 0% 100%, rgba(74,134,255,0.2), transparent 70%)',
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(10,15,29,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(10,15,29,0.045) 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+          maskImage: 'radial-gradient(ellipse 70% 65% at 72% 45%, #000 25%, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 70% 65% at 72% 45%, #000 25%, transparent 80%)',
+        }}
+      />
+      <PitchLines align="xMaxYMid" strokeWidth={1.1} className="absolute inset-0 h-full w-full text-ink/[0.17]" />
+      <div className="container-site relative">
         <SectionHeading num="01" kicker="The team" title="Who we are" />
 
         <div className="mt-14 grid gap-14 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
@@ -41,9 +63,11 @@ const About = () => {
               text="A multidisciplinary group of undergraduates at IIT Kanpur, building intelligent robots that see, think and act in messy real-world environments."
             />
             <Reveal delay={0.1} className="mt-8 max-w-2xl text-lg leading-relaxed text-ink/75">
-              Working closely with faculty, we cover the whole robotics stack. Our work spans research,
-              government-funded projects and international competitions. Beyond competing, we want to grow
-              a strong autonomous robotics community and help move the field forward in India.
+              Since 2018 we have designed every part of our robots ourselves, from omni-wheel drivetrains and
+              solenoid kickers to real-time vision, localisation and team strategy. After podium finishes at the
+              DJI RoboMaster AI Challenge, we became the first Indian team to qualify for the RoboCup Middle
+              Size League. Now we are moving into physical AI: robot arms that learn manipulation skills from
+              data and follow plain-language instructions.
             </Reveal>
 
             <ul className="mt-10 flex flex-wrap gap-2">
@@ -55,7 +79,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 + i * 0.05, type: 'spring', stiffness: 300, damping: 20 }}
-                  whileHover={{ backgroundColor: '#0d110e', color: '#d8ff3e' }}
+                  whileHover={{ backgroundColor: '#0a0f1d', color: '#4a86ff' }}
                 >
                   {d}
                 </motion.li>
@@ -82,9 +106,9 @@ const About = () => {
               <span className="label absolute right-3 top-3">MSL robot</span>
               {/* Dimension lines */}
               <svg className="absolute inset-x-6 bottom-10 h-4 w-[calc(100%-3rem)]" aria-hidden>
-                <line x1="0" y1="8" x2="100%" y2="8" stroke="#0d110e" strokeWidth="1" />
-                <line x1="0" y1="0" x2="0" y2="16" stroke="#0d110e" strokeWidth="1" />
-                <line x1="100%" y1="0" x2="100%" y2="16" stroke="#0d110e" strokeWidth="1" />
+                <line x1="0" y1="8" x2="100%" y2="8" stroke="#0a0f1d" strokeWidth="1" />
+                <line x1="0" y1="0" x2="0" y2="16" stroke="#0a0f1d" strokeWidth="1" />
+                <line x1="100%" y1="0" x2="100%" y2="16" stroke="#0a0f1d" strokeWidth="1" />
               </svg>
               <motion.img
                 src={dribbler}
@@ -101,17 +125,18 @@ const About = () => {
           </figure>
         </div>
 
-        {/* Scoreboard */}
-        <Reveal className="led mt-20 grid grid-cols-2 border-4 border-ink lg:grid-cols-4">
+        {/* Scoreboard: a blueprint panel that matches the CAD figure above */}
+        <Reveal className="blueprint mt-20 grid grid-cols-2 border-2 border-ink lg:grid-cols-4">
           {stats.map((s, i) => (
             <div
               key={s.label}
-              className={`p-6 sm:p-8 ${i % 2 ? '' : 'border-r-2'} ${i < 2 ? 'border-b-2 lg:border-b-0' : ''} border-chalk/10 lg:border-r-2 lg:last:border-r-0`}
+              className={`p-6 sm:p-8 ${i % 2 ? '' : 'border-r-2'} ${i < 2 ? 'border-b-2 lg:border-b-0' : ''} border-ink/15 lg:border-r-2 lg:last:border-r-0`}
             >
-              <p className="display text-7xl text-volt sm:text-8xl">
+              <span className="block h-1 w-8 bg-volt" aria-hidden />
+              <p className="display mt-4 text-7xl text-ink sm:text-8xl">
                 <Counter to={s.value} from={s.value <= 1 ? s.value : 0} suffix={s.suffix} />
               </p>
-              <p className="label mt-2 text-chalk/70">{s.label}</p>
+              <p className="label mt-2 text-ink/60">{s.label}</p>
             </div>
           ))}
         </Reveal>

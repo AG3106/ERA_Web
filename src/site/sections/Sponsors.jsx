@@ -8,8 +8,8 @@ const Sponsors = () => (
     <div className="container-site">
       <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
         <SectionHeading num="05" kicker="Partners" title="Our sponsors" className="flex-1">
-          Our sponsors back our research, competitions and student-led engineering. Their support lets us
-          design, build and deploy autonomous robots, and represent IIT Kanpur on international stages.
+          ERA is run entirely by students. Our partners help pay for the motors, sensors, compute and
+          competition entries that let a student team from Kanpur take on the world&rsquo;s best robot football teams.
         </SectionHeading>
         <Reveal delay={0.2} className="flex shrink-0 flex-wrap gap-2">
           <a href={links.brochure} target="_blank" rel="noopener noreferrer" className="btn-volt">
@@ -40,7 +40,7 @@ const Sponsors = () => (
               href={s.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex h-52 flex-col justify-between overflow-hidden p-5 sm:h-60 sm:p-6"
+              className="group relative flex h-36 flex-col justify-between overflow-hidden p-4 sm:h-60 sm:p-6"
             >
               <span className="absolute inset-0 origin-bottom scale-y-0 bg-volt transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-y-100" />
               <span className="label relative flex justify-between text-chalk/50 transition-colors group-hover:text-ink">
@@ -51,9 +51,9 @@ const Sponsors = () => (
                 src={s.logo}
                 alt={s.name}
                 loading="lazy"
-                className="relative mx-auto max-h-16 max-w-[65%] object-contain transition-all duration-500 group-hover:-translate-y-3 group-hover:scale-75 group-hover:brightness-0 sm:max-h-20"
+                className="relative mx-auto my-auto max-h-12 max-w-[65%] object-contain transition-all duration-500 group-hover:-translate-y-3 group-hover:scale-75 group-hover:brightness-0 sm:max-h-20"
               />
-              <p className="relative line-clamp-3 text-xs leading-relaxed text-ink opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:delay-150">
+              <p className="relative hidden text-xs leading-relaxed text-ink opacity-0 sm:line-clamp-3 transition-opacity duration-300 group-hover:opacity-100 group-hover:delay-150">
                 {s.description}
               </p>
             </a>

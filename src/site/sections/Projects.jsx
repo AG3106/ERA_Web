@@ -6,7 +6,7 @@ import { Arrow, Reveal, SectionHeading, SplitText } from '../components/motion';
 import { useLenis } from '../components/SmoothScroll';
 
 export const projectIntro =
-  'Before RoboCup MSL, we worked on many self-initiated and government-funded projects, and took part in international competitions and conferences that shaped who we are today.';
+  'Before RoboCup, ERA built PHASR, two generations of Dexter, an excavator and a BIRAC-funded wheelchair, alongside our RoboMaster robots. Each one taught us something our robots still use today.';
 
 const useIsDesktop = () => {
   const query = '(min-width: 1024px)';
@@ -175,9 +175,9 @@ const StackCard = ({ project, index, total, progress }) => {
   const imgScale = useTransform(scrollYProgress, [0, 1], [1.4, 1]);
 
   return (
-    <div ref={imgRef} className="sticky top-0 flex h-screen items-center justify-center">
+    <div ref={imgRef} className="sticky top-0 flex h-[75vh] items-center justify-center sm:h-screen">
       <motion.article
-        className="relative h-[70vh] w-full origin-top overflow-hidden border-2 border-chalk/20 bg-coal"
+        className="relative h-[52vh] w-full origin-top overflow-hidden sm:h-[70vh] border-2 border-chalk/20 bg-coal"
         style={{ scale, top: `calc(${index * 22}px)` }}
       >
         <motion.img
@@ -187,8 +187,8 @@ const StackCard = ({ project, index, total, progress }) => {
           className="absolute inset-0 h-full w-full object-cover"
           style={{ scale: imgScale }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/20 to-ink/10" />
-        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-6 sm:p-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/95 via-ink/20 to-ink/10 sm:bg-gradient-to-t" />
+        <div className="absolute inset-x-0 top-0 flex items-end justify-between gap-6 p-6 sm:bottom-0 sm:top-auto sm:p-10">
           <div>
             <p className="label inline-block bg-volt px-2 py-1 text-ink">
               {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}

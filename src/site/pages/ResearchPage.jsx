@@ -17,13 +17,14 @@ const ResearchPage = () => (
     </PageHeader>
     <section className="paper py-20 sm:py-28">
       <div className="container-site">
-        <Reveal className="led mb-16 grid grid-cols-3 border-4 border-ink text-chalk">
+        <Reveal className="blueprint mb-16 grid grid-cols-3 border-2 border-ink">
           {stats.map((s) => (
-            <div key={s.label} className="border-r-2 border-chalk/10 p-5 last:border-r-0 sm:p-8">
-              <p className="display text-5xl text-volt sm:text-8xl">
+            <div key={s.label} className="min-w-0 border-r-2 border-ink/15 px-3 py-5 last:border-r-0 sm:p-6 lg:p-8">
+              <span className="block h-1 w-8 bg-volt" aria-hidden />
+              <p className="display mt-4 text-4xl text-ink sm:text-6xl lg:text-8xl">
                 <Counter to={s.value} from={s.value > 100 ? s.value - 12 : 0} />
               </p>
-              <p className="label mt-2 text-chalk/70">{s.label}</p>
+              <p className="label mt-2 text-ink/60">{s.label}</p>
             </div>
           ))}
         </Reveal>
