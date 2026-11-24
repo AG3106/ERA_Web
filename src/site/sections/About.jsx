@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import dribbler from '../../assets/projects/Dribblerem.png';
 import { research, sponsorData } from '../../constants';
 import { links } from '../data/links';
-import { Arrow, Counter, Reveal, ScrollText, SectionHeading } from '../components/motion';
+import { Arrow, Counter, PitchLines, Reveal, ScrollText, SectionHeading } from '../components/motion';
 
 const disciplines = [
   'Mechanical design',
@@ -31,7 +31,29 @@ const About = () => {
 
   return (
     <section id="about" className="paper relative overflow-hidden py-24 sm:py-32">
-      <div className="container-site">
+      {/* Background: a warm floodlight glow, a cool one opposite, a fading blueprint grid and a
+          chalked penalty box behind the CAD figure */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 48% 36% at 100% 0%, rgba(255,90,31,0.2), transparent 70%), radial-gradient(ellipse 52% 40% at 0% 100%, rgba(74,134,255,0.2), transparent 70%)',
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(10,15,29,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(10,15,29,0.045) 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+          maskImage: 'radial-gradient(ellipse 70% 65% at 72% 45%, #000 25%, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 70% 65% at 72% 45%, #000 25%, transparent 80%)',
+        }}
+      />
+      <PitchLines align="xMaxYMid" strokeWidth={1.1} className="absolute inset-0 h-full w-full text-ink/[0.17]" />
+      <div className="container-site relative">
         <SectionHeading num="01" kicker="The team" title="Who we are" />
 
         <div className="mt-14 grid gap-14 lg:grid-cols-[1.3fr_1fr] lg:gap-20">

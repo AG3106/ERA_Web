@@ -55,32 +55,68 @@ const Explore = () => (
 
     <MotionLink
       to="/learning"
-      className="group relative flex min-h-[600px] gap-10 flex-col justify-between overflow-hidden bg-volt p-8 text-ink sm:p-12"
+      className="group relative flex min-h-[600px] gap-6 flex-col justify-between overflow-hidden bg-volt p-8 text-ink sm:p-12"
       initial="rest"
       whileHover="hover"
       animate="rest"
     >
-      <div className="flex items-start justify-between">
+      {/* Faint blueprint grid and an arm's reach envelope behind the roadmap */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.1]"
+        style={{
+          backgroundImage:
+            'linear-gradient(#0a0f1d 1px, transparent 1px), linear-gradient(90deg, #0a0f1d 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+          maskImage: 'radial-gradient(ellipse 80% 70% at 70% 55%, #000 30%, transparent 85%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 70% 55%, #000 30%, transparent 85%)',
+        }}
+      />
+      <svg
+        aria-hidden
+        viewBox="0 0 480 480"
+        fill="none"
+        stroke="currentColor"
+        className="pointer-events-none absolute -bottom-28 -right-28 h-[480px] w-[480px] text-ink/20 transition-transform duration-700 group-hover:-rotate-6"
+      >
+        <circle cx="480" cy="480" r="150" strokeWidth="2" />
+        <circle cx="480" cy="480" r="270" strokeWidth="2" strokeDasharray="6 10" />
+        <circle cx="480" cy="480" r="390" strokeWidth="2" />
+        <path d="M480 480 L330 350 L352 190" strokeWidth="4" strokeLinejoin="round" />
+        <path d="M352 190 l-18 -26 M352 190 l20 -24" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="480" cy="480" r="12" fill="currentColor" stroke="none" />
+        <circle cx="330" cy="350" r="9" fill="currentColor" stroke="none" />
+      </svg>
+
+      <div className="relative flex items-start justify-between">
         <p className="label">Learning resources</p>
         <span className="grid h-12 w-12 place-items-center bg-ink text-chalk transition-transform duration-300 group-hover:rotate-45">
           <Arrow />
         </span>
       </div>
 
-      <ol className="mx-auto grid w-full max-w-sm grid-cols-5 gap-2">
+      {/* The five modules as a roadmap: tiles joined by a track */}
+      <ol className="relative w-full max-w-md">
+        <span aria-hidden className="absolute bottom-6 left-6 top-6 w-0.5 -translate-x-1/2 bg-ink/30" />
         {learning.map((l, i) => (
           <motion.li
             key={l.name}
-            className="grid aspect-square place-items-center bg-ink"
-            variants={{ rest: { y: 0 }, hover: { y: i % 2 ? -18 : 18 } }}
-            transition={{ type: 'spring', stiffness: 260, damping: 16, delay: i * 0.03 }}
+            className="relative flex items-center gap-4 py-1"
+            variants={{ rest: { x: 0 }, hover: { x: 14 } }}
+            transition={{ type: 'spring', stiffness: 260, damping: 20, delay: i * 0.04 }}
           >
-            <img src={l.icon} alt="" className="h-3/5 w-3/5 object-contain" />
+            <span className="grid h-12 w-12 shrink-0 place-items-center bg-ink">
+              <img src={l.icon} alt="" className="h-7 w-7 object-contain" />
+            </span>
+            <span className="min-w-0">
+              <span className="label block text-ink/60">Module {String(i + 1).padStart(2, '0')}</span>
+              <span className="display block text-2xl leading-none sm:text-[1.7rem]">{l.name}</span>
+            </span>
           </motion.li>
         ))}
       </ol>
 
-      <div>
+      <div className="relative">
         <h3 className="display text-[clamp(3.5rem,7vw,6.5rem)]">Learn with ERA</h3>
         <p className="mt-3 max-w-md text-ink/80">
           Five drills, from hardware to decision algorithms, to start your robotics journey.

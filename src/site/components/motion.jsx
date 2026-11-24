@@ -111,7 +111,7 @@ export const SectionHeading = ({ num, kicker, title, children, className = '', s
 );
 
 // Chalk pitch markings that draw themselves when scrolled into view.
-export const PitchLines = ({ className = '', variant = 'box' }) => {
+export const PitchLines = ({ className = '', variant = 'box', align = 'xMidYMid', strokeWidth = 3 }) => {
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
     show: (i) => ({
@@ -136,12 +136,12 @@ export const PitchLines = ({ className = '', variant = 'box' }) => {
   return (
     <motion.svg
       viewBox="0 0 1000 600"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio={`${align} slice`}
       aria-hidden
       className={`pointer-events-none ${className}`}
       fill="none"
       stroke="currentColor"
-      strokeWidth="3"
+      strokeWidth={strokeWidth}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
