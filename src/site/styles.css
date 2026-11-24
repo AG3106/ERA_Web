@@ -96,6 +96,14 @@
     @apply bg-paper text-ink;
   }
 
+  /* Blueprint panel: chalk with a faint navy grid, used for stat strips */
+  .blueprint {
+    background-color: #eef3fc;
+    background-image: linear-gradient(rgba(10, 15, 29, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 15, 29, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
   /* LED board: dot-matrix on black */
   .led {
     background-color: #04060c;

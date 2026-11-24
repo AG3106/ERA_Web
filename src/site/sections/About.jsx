@@ -104,14 +104,7 @@ const About = () => {
         </div>
 
         {/* Scoreboard: a blueprint panel that matches the CAD figure above */}
-        <Reveal
-          className="mt-20 grid grid-cols-2 border-2 border-ink bg-chalk lg:grid-cols-4"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(10,15,29,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(10,15,29,0.06) 1px, transparent 1px)',
-            backgroundSize: '24px 24px',
-          }}
-        >
+        <Reveal className="blueprint mt-20 grid grid-cols-2 border-2 border-ink lg:grid-cols-4">
           {stats.map((s, i) => (
             <div
               key={s.label}
