@@ -13,10 +13,10 @@ const categoryStyle = {
 
 export const Ball = ({ className = '' }) => (
   <svg viewBox="0 0 100 100" className={className} aria-hidden>
-    <circle cx="50" cy="50" r="47" fill="#f3f0e6" stroke="#0d110e" strokeWidth="4" />
-    <path d="M50 30 L68 43 L61 64 L39 64 L32 43 Z" fill="#0d110e" />
-    <path d="M50 30 V5 M68 43 L91 35 M61 64 L75 86 M39 64 L25 86 M32 43 L9 35" stroke="#0d110e" strokeWidth="4" />
-    <path d="M40 5 L50 12 L60 5 M84 22 L91 35 L96 50 M85 80 L75 86 L64 94 M36 94 L25 86 L15 80 M4 50 L9 35 L16 22" stroke="#0d110e" strokeWidth="4" fill="none" />
+    <circle cx="50" cy="50" r="47" fill="#eef3fc" stroke="#0a0f1d" strokeWidth="4" />
+    <path d="M50 30 L68 43 L61 64 L39 64 L32 43 Z" fill="#0a0f1d" />
+    <path d="M50 30 V5 M68 43 L91 35 M61 64 L75 86 M39 64 L25 86 M32 43 L9 35" stroke="#0a0f1d" strokeWidth="4" />
+    <path d="M40 5 L50 12 L60 5 M84 22 L91 35 L96 50 M85 80 L75 86 L64 94 M36 94 L25 86 L15 80 M4 50 L9 35 L16 22" stroke="#0a0f1d" strokeWidth="4" fill="none" />
   </svg>
 );
 
@@ -127,12 +127,12 @@ const LabLines = ({ className = '' }) => (
 
 const Wheel = ({ className = '' }) => (
   <svg viewBox="0 0 100 100" className={className} aria-hidden>
-    <circle cx="50" cy="50" r="46" fill="#1b1f25" stroke="#f3f0e6" strokeWidth="4" />
+    <circle cx="50" cy="50" r="46" fill="#1b1f25" stroke="#eef3fc" strokeWidth="4" />
     {[0, 45, 90, 135].map((a) => (
-      <rect key={a} x="44" y="8" width="12" height="26" rx="5" fill="#f3f0e6" transform={`rotate(${a} 50 50) rotate(45 50 21)`} />
+      <rect key={a} x="44" y="8" width="12" height="26" rx="5" fill="#eef3fc" transform={`rotate(${a} 50 50) rotate(45 50 21)`} />
     ))}
     {[180, 225, 270, 315].map((a) => (
-      <rect key={a} x="44" y="8" width="12" height="26" rx="5" fill="#f3f0e6" transform={`rotate(${a} 50 50) rotate(45 50 21)`} />
+      <rect key={a} x="44" y="8" width="12" height="26" rx="5" fill="#eef3fc" transform={`rotate(${a} 50 50) rotate(45 50 21)`} />
     ))}
     <circle cx="50" cy="50" r="10" fill="#ff5a1f" />
   </svg>

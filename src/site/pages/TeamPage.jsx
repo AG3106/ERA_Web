@@ -25,7 +25,7 @@ const MemberCard = ({ member, index, role }) => (
     animate={{ opacity: 1, y: 0, rotate: 0, transition: { delay: index * 0.04, duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
     exit={{ opacity: 0, transition: { duration: 0.2 } }}
     whileHover={{ y: -8, rotate: index % 2 ? 1.5 : -1.5 }}
-    className="group relative border-2 border-ink bg-chalk p-2 shadow-[6px_6px_0_#0d110e]"
+    className="group relative border-2 border-ink bg-chalk p-2 shadow-[6px_6px_0_#0a0f1d]"
   >
     <div className="relative aspect-[4/5] overflow-hidden bg-ink">
       <img

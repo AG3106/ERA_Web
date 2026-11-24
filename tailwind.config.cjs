@@ -4,16 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: '#0d110e',
-        coal: '#161b17',
-        chalk: '#f3f0e6',
-        paper: '#e8e3d3',
-        turf: '#1c5632',
-        'turf-light': '#236a3e',
-        'turf-dark': '#123c22',
-        volt: '#d8ff3e',
+        // ERA blue palette. `volt` is the logo blue (#6195FE); `turf` is the
+        // blue pitch used for RoboCup sections.
+        ink: '#0a0f1d',
+        coal: '#121a2e',
+        chalk: '#eef3fc',
+        paper: '#e1e9f6',
+        turf: '#13336f',
+        'turf-light': '#1a3f85',
+        'turf-dark': '#0c2350',
+        volt: '#6195fe',
         flare: '#ff5a1f',
-        muted: '#6d7268',
+        muted: '#68728a',
       },
       fontFamily: {
         display: ['"Big Shoulders Display"', 'Impact', 'sans-serif'],

@@ -6,18 +6,18 @@
 
 @layer base {
   html {
-    background: #0d110e;
+    background: #0a0f1d;
   }
   body {
     @apply bg-ink font-sans text-chalk antialiased;
     -webkit-tap-highlight-color: transparent;
   }
   ::selection {
-    background: #d8ff3e;
-    color: #0d110e;
+    background: #6195fe;
+    color: #0a0f1d;
   }
   :focus-visible {
-    outline: 2px solid #d8ff3e;
+    outline: 2px solid #6195fe;
     outline-offset: 3px;
   }
 }
@@ -48,28 +48,28 @@
 
   /* Mowed-pitch stripes */
   .turf {
-    background-color: #1c5632;
+    background-color: #13336f;
     background-image: repeating-linear-gradient(
       90deg,
-      #1c5632 0 90px,
-      #205f37 90px 180px
+      #13336f 0 90px,
+      #173b7c 90px 180px
     );
   }
   .turf-v {
-    background-color: #1c5632;
+    background-color: #13336f;
     background-image: repeating-linear-gradient(
       180deg,
-      #1c5632 0 70px,
-      #205f37 70px 140px
+      #13336f 0 70px,
+      #173b7c 70px 140px
     );
   }
   /* Engineering grid with a faint volt glow: the neutral dark backdrop */
   .tech {
-    background-color: #101512;
-    background-image: radial-gradient(ellipse 55% 60% at 85% 10%, rgba(216, 255, 62, 0.1), transparent 70%),
+    background-color: #0d1324;
+    background-image: radial-gradient(ellipse 55% 60% at 85% 10%, rgba(97, 149, 254, 0.16), transparent 70%),
       radial-gradient(ellipse 45% 55% at 5% 95%, rgba(255, 90, 31, 0.08), transparent 70%),
-      linear-gradient(rgba(243, 240, 230, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(243, 240, 230, 0.045) 1px, transparent 1px);
+      linear-gradient(rgba(238, 243, 252, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(238, 243, 252, 0.045) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 56px 56px, 56px 56px;
   }
 
@@ -98,7 +98,7 @@
 
   /* LED board: dot-matrix on black */
   .led {
-    background-color: #050605;
+    background-color: #04060c;
     background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1.3px);
     background-size: 5px 5px;
   }

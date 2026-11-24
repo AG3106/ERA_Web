@@ -55,7 +55,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 + i * 0.05, type: 'spring', stiffness: 300, damping: 20 }}
-                  whileHover={{ backgroundColor: '#0d110e', color: '#d8ff3e' }}
+                  whileHover={{ backgroundColor: '#0a0f1d', color: '#6195fe' }}
                 >
                   {d}
                 </motion.li>
@@ -82,9 +82,9 @@ const About = () => {
               <span className="label absolute right-3 top-3">MSL robot</span>
               {/* Dimension lines */}
               <svg className="absolute inset-x-6 bottom-10 h-4 w-[calc(100%-3rem)]" aria-hidden>
-                <line x1="0" y1="8" x2="100%" y2="8" stroke="#0d110e" strokeWidth="1" />
-                <line x1="0" y1="0" x2="0" y2="16" stroke="#0d110e" strokeWidth="1" />
-                <line x1="100%" y1="0" x2="100%" y2="16" stroke="#0d110e" strokeWidth="1" />
+                <line x1="0" y1="8" x2="100%" y2="8" stroke="#0a0f1d" strokeWidth="1" />
+                <line x1="0" y1="0" x2="0" y2="16" stroke="#0a0f1d" strokeWidth="1" />
+                <line x1="100%" y1="0" x2="100%" y2="16" stroke="#0a0f1d" strokeWidth="1" />
               </svg>
               <motion.img
                 src={dribbler}
