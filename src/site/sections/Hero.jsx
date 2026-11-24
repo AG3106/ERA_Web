@@ -71,15 +71,13 @@ const Hero = () => {
           <h1 className="display text-[clamp(3.4rem,9vw,10rem)] text-chalk">
             <SplitText text="Robots that" animateOnMount delay={0.9} stagger={0.07} />
             <br />
-            <span className="text-volt">
-              <SplitText text="think and act" animateOnMount delay={1.1} stagger={0.07} />
-            </span>{' '}
+            <SplitText text="think and act" animateOnMount delay={1.1} stagger={0.07} />{' '}
             <span className="relative inline-block">
               <SplitText text="on their own." animateOnMount delay={1.25} stagger={0.07} />
               <svg
                 viewBox="0 0 300 20"
                 preserveAspectRatio="none"
-                className="absolute -bottom-1 left-0 h-3 w-full text-flare sm:h-5"
+                className="absolute -bottom-1 left-0 h-3 w-full text-volt sm:h-5"
                 aria-hidden
               >
                 <motion.path

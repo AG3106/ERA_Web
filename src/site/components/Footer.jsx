@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { links, socials } from '../data/links';
-import { Arrow, Marquee } from './motion';
+import { Arrow } from './motion';
 
 const explore = [
   ['Projects', '/projects'],
@@ -57,16 +57,6 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className="overflow-hidden border-b-2 border-chalk/10 py-6">
-      <Marquee duration={25}>
-        {['ERA', 'IIT Kanpur', 'Autonomous Robotics'].map((w) => (
-          <span key={w} className="display flex items-center gap-[4vw] pr-[4vw] text-[16vw] leading-[0.85] text-volt">
-            {w}
-            <span className="h-[4vw] w-[4vw] rotate-45 bg-flare" aria-hidden />
-          </span>
-        ))}
-      </Marquee>
-    </div>
     <div className="container-site label flex flex-col gap-2 border-t border-chalk/15 py-5 text-chalk/60 sm:flex-row sm:justify-between">
       <span>© {new Date().getFullYear()} Équipe de Robotique Autonome · IIT Kanpur</span>
       <span>Kanpur, Uttar Pradesh, India</span>
