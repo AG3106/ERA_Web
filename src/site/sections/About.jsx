@@ -103,17 +103,25 @@ const About = () => {
           </figure>
         </div>
 
-        {/* Scoreboard */}
-        <Reveal className="led mt-20 grid grid-cols-2 border-4 border-ink lg:grid-cols-4">
+        {/* Scoreboard: a blueprint panel that matches the CAD figure above */}
+        <Reveal
+          className="mt-20 grid grid-cols-2 border-2 border-ink bg-chalk lg:grid-cols-4"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(10,15,29,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(10,15,29,0.06) 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }}
+        >
           {stats.map((s, i) => (
             <div
               key={s.label}
-              className={`p-6 sm:p-8 ${i % 2 ? '' : 'border-r-2'} ${i < 2 ? 'border-b-2 lg:border-b-0' : ''} border-chalk/10 lg:border-r-2 lg:last:border-r-0`}
+              className={`p-6 sm:p-8 ${i % 2 ? '' : 'border-r-2'} ${i < 2 ? 'border-b-2 lg:border-b-0' : ''} border-ink/15 lg:border-r-2 lg:last:border-r-0`}
             >
-              <p className="display text-7xl text-volt sm:text-8xl">
+              <span className="block h-1 w-8 bg-volt" aria-hidden />
+              <p className="display mt-4 text-7xl text-ink sm:text-8xl">
                 <Counter to={s.value} from={s.value <= 1 ? s.value : 0} suffix={s.suffix} />
               </p>
-              <p className="label mt-2 text-chalk/70">{s.label}</p>
+              <p className="label mt-2 text-ink/60">{s.label}</p>
             </div>
           ))}
         </Reveal>
