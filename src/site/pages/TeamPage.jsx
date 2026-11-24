@@ -44,7 +44,7 @@ const MemberCard = ({ member, index, role }) => (
         loading="lazy"
         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <span className="display absolute left-0 top-0 grid h-14 w-14 place-items-center bg-volt text-4xl text-ink">
+      <span className="display absolute left-0 top-0 hidden h-14 w-14 place-items-center sm:grid bg-volt text-4xl text-ink">
         {index + 1}
       </span>
     </div>

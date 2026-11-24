@@ -175,9 +175,9 @@ const StackCard = ({ project, index, total, progress }) => {
   const imgScale = useTransform(scrollYProgress, [0, 1], [1.4, 1]);
 
   return (
-    <div ref={imgRef} className="sticky top-0 flex h-screen items-center justify-center">
+    <div ref={imgRef} className="sticky top-0 flex h-[75vh] items-center justify-center sm:h-screen">
       <motion.article
-        className="relative h-[70vh] w-full origin-top overflow-hidden border-2 border-chalk/20 bg-coal"
+        className="relative h-[52vh] w-full origin-top overflow-hidden sm:h-[70vh] border-2 border-chalk/20 bg-coal"
         style={{ scale, top: `calc(${index * 22}px)` }}
       >
         <motion.img

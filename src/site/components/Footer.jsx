@@ -21,8 +21,8 @@ const Footer = () => (
         aria-hidden="true"
         className="pointer-events-none absolute right-0 top-0 hidden h-full md:block"
       />
-      <div className="container-site relative grid gap-12 py-20 md:grid-cols-[1.5fr_1fr_1fr]">
-        <div>
+      <div className="container-site relative grid grid-cols-2 gap-x-6 gap-y-12 py-16 sm:py-20 md:grid-cols-[1.5fr_1fr_1fr] md:gap-x-12">
+        <div className="col-span-2 md:col-span-1">
           <p className="display text-6xl text-chalk sm:text-7xl">
             Keep
             <br />
@@ -34,10 +34,10 @@ const Footer = () => (
         </div>
         <div>
           <p className="label mb-5 text-volt">Explore</p>
-          <ul className="space-y-2">
+          <ul className="space-y-1 sm:space-y-2">
             {explore.map(([label, to]) => (
               <li key={label}>
-                <Link to={to} className="display text-3xl text-chalk transition-colors hover:text-volt">
+                <Link to={to} className="display inline-block py-1 text-2xl text-chalk transition-colors hover:text-volt sm:py-0 sm:text-3xl">
                   {label}
                 </Link>
               </li>
@@ -46,14 +46,14 @@ const Footer = () => (
         </div>
         <div>
           <p className="label mb-5 text-volt">Follow</p>
-          <ul className="space-y-2">
+          <ul className="space-y-1 sm:space-y-2">
             {socials.map((s) => (
               <li key={s.label}>
                 <a
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="display text-3xl text-chalk transition-colors hover:text-volt"
+                  className="display inline-block py-1 text-2xl text-chalk transition-colors hover:text-volt sm:py-0 sm:text-3xl"
                 >
                   {s.label}
                 </a>

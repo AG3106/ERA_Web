@@ -63,7 +63,7 @@ export const SplitText = ({ text, className, delay = 0, stagger = 0.05, animateO
 // Paragraph whose words brighten as it scrolls through the viewport.
 export const ScrollText = ({ text, className }) => {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.85', 'end 0.45'] });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.9', 'start 0.35'] });
   const words = text.split(' ');
   return (
     <p ref={ref} className={className}>
