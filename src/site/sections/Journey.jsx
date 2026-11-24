@@ -72,7 +72,7 @@ const eras = [
     blurb: 'Fully autonomous robot football in the Middle Size League.',
     bg: 'turf',
     bgMobile: 'turf-v',
-    accent: 'text-volt',
+    accent: 'text-[#9ec0ff]',
     items: achievements.filter((a) => Number(a.year) >= 2023),
   },
   {

@@ -48,8 +48,6 @@ const Hero = () => {
           animate={{ opacity: [0, 1, 0.5] }}
           transition={{ duration: 2.2, delay: 0.6, times: [0, 0.3, 1] }}
         />
-        {/* Blue wash so the night-time pitch photo sits in the ERA palette */}
-        <div aria-hidden className="absolute inset-0 bg-turf opacity-60 mix-blend-color" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-transparent to-ink/90" />
 
         <motion.div className="container-site relative flex h-full flex-col justify-end pb-8 sm:pb-12" style={{ y: textY }}>

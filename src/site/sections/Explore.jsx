@@ -11,7 +11,7 @@ const Explore = () => (
   <section className="grid bg-ink md:grid-cols-2">
     <MotionLink
       to="/team"
-      className="group relative flex min-h-[600px] gap-10 flex-col justify-between overflow-hidden bg-flare p-8 text-ink sm:p-12"
+      className="group relative flex min-h-[600px] gap-10 flex-col justify-between overflow-hidden turf-v p-8 text-chalk sm:p-12"
       initial="rest"
       whileHover="hover"
       animate="rest"
@@ -47,7 +47,7 @@ const Explore = () => (
 
       <div>
         <h3 className="display text-[clamp(3.5rem,7vw,6.5rem)]">Meet the team</h3>
-        <p className="mt-3 max-w-md text-ink/80">
+        <p className="mt-3 max-w-md text-chalk/80">
           Heads, senior and junior members, and the people who led ERA before us.
         </p>
       </div>

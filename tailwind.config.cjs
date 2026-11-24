@@ -4,16 +4,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // ERA blue palette. `volt` is the logo blue (#6195FE); `turf` is the
-        // blue pitch used for RoboCup sections.
+        // Night-stadium palette: navy sky (`ink`), floodlit white (`chalk`),
+        // a real green pitch (`turf`) and ERA blue as the accent (`volt`).
         ink: '#0a0f1d',
         coal: '#121a2e',
         chalk: '#eef3fc',
         paper: '#e1e9f6',
-        turf: '#13336f',
-        'turf-light': '#1a3f85',
-        'turf-dark': '#0c2350',
-        volt: '#6195fe',
+        turf: '#1d5c35',
+        'turf-light': '#236b3f',
+        'turf-dark': '#133f24',
+        volt: '#4a86ff',
         flare: '#ff5a1f',
         muted: '#68728a',
       },

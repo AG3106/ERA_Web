@@ -13,11 +13,11 @@
     -webkit-tap-highlight-color: transparent;
   }
   ::selection {
-    background: #6195fe;
+    background: #4a86ff;
     color: #0a0f1d;
   }
   :focus-visible {
-    outline: 2px solid #6195fe;
+    outline: 2px solid #4a86ff;
     outline-offset: 3px;
   }
 }
@@ -48,25 +48,25 @@
 
   /* Mowed-pitch stripes */
   .turf {
-    background-color: #13336f;
+    background-color: #1d5c35;
     background-image: repeating-linear-gradient(
       90deg,
-      #13336f 0 90px,
-      #173b7c 90px 180px
+      #1d5c35 0 90px,
+      #226a3d 90px 180px
     );
   }
   .turf-v {
-    background-color: #13336f;
+    background-color: #1d5c35;
     background-image: repeating-linear-gradient(
       180deg,
-      #13336f 0 70px,
-      #173b7c 70px 140px
+      #1d5c35 0 70px,
+      #226a3d 70px 140px
     );
   }
   /* Engineering grid with a faint volt glow: the neutral dark backdrop */
   .tech {
     background-color: #0d1324;
-    background-image: radial-gradient(ellipse 55% 60% at 85% 10%, rgba(97, 149, 254, 0.16), transparent 70%),
+    background-image: radial-gradient(ellipse 55% 60% at 85% 10%, rgba(74, 134, 255, 0.18), transparent 70%),
       radial-gradient(ellipse 45% 55% at 5% 95%, rgba(255, 90, 31, 0.08), transparent 70%),
       linear-gradient(rgba(238, 243, 252, 0.045) 1px, transparent 1px),
       linear-gradient(90deg, rgba(238, 243, 252, 0.045) 1px, transparent 1px);

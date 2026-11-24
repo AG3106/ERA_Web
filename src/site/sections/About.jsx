@@ -56,7 +56,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 + i * 0.05, type: 'spring', stiffness: 300, damping: 20 }}
-                  whileHover={{ backgroundColor: '#0a0f1d', color: '#6195fe' }}
+                  whileHover={{ backgroundColor: '#0a0f1d', color: '#4a86ff' }}
                 >
                   {d}
                 </motion.li>
