@@ -5,8 +5,20 @@ import { PageHeader, SectionHeading } from '../components/motion';
 import teamGroup from '../../assets/optimized/team-group.jpg';
 // Every group is shown on one scrolling page, in this order.
 const sections = [
-  { id: 'heads', label: 'Heads', role: 'Head', groups: [{ members: currentHeads }] },
-  { id: 'stms', label: 'STMs', role: 'STM', groups:[{members: currentSTMs}]},
+  {
+    id: 'heads',
+    label: 'Heads & STMs',
+    // Five cards: one row of five on wide screens.
+    cols: 'lg:grid-cols-5',
+    groups: [
+      {
+        members: [
+          ...currentHeads.map((m) => ({ ...m, role: 'Head' })),
+          ...currentSTMs.map((m) => ({ ...m, role: 'STM' })),
+        ],
+      },
+    ],
+  },
   { id: 'jtm', label: 'Junior members', role: 'Junior member', groups: [{ members: juniorMembers }] },
   { id: 'past', label: 'Past heads', role: 'Past head', groups: pastHeads.map((g) => ({ title: g.year, members: g.members })) },
 ];
@@ -37,7 +49,7 @@ const MemberCard = ({ member, index, role }) => (
       </span>
     </div>
     <div className="px-1 pb-1 pt-3">
-      <p className="label text-turf">{role}</p>
+      <p className="label text-turf">{member.role ?? role}</p>
       <h3 className="display mt-1 text-3xl leading-[0.9] text-ink">{member.name}</h3>
       {member.email && (
         <a href={`mailto:${member.email}`} className="mt-1 block break-words font-mono text-[11px] leading-snug text-ink/60 hover:text-flare">
@@ -65,8 +77,8 @@ const MemberCard = ({ member, index, role }) => (
   </motion.li>
 );
 
-const MemberGrid = ({ members, role }) => (
-  <ul className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+const MemberGrid = ({ members, role, cols = 'lg:grid-cols-4' }) => (
+  <ul className={`grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 ${cols}`}>
     {members.map((m, i) => (
       <MemberCard key={m.name} member={m} index={i} role={role} />
     ))}
@@ -106,7 +118,7 @@ const TeamPage = () => (
                         <span className="label text-ink/60">{count(g.members.length)}</span>
                       </div>
                     )}
-                    <MemberGrid members={g.members} role={sec.role} />
+                    <MemberGrid members={g.members} role={sec.role} cols={sec.cols} />
                   </div>
                 ))}
               </div>
