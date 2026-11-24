@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { links, socials } from '../data/links';
 import { Arrow, Reveal, SectionHeading } from '../components/motion';
@@ -12,7 +12,43 @@ const fields = [
   { name: 'contact', label: 'Contact number', placeholder: 'Optional' },
 ];
 
+// The Instagram feed (Elfsight) is heavy, so its script is only fetched once
+// the feed is close to scrolling into view, instead of on every page load.
+const ELFSIGHT_SRC = 'https://static.elfsight.com/platform/platform.js';
+const useElfsightWhenNear = () => {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    const load = () => {
+      if (document.querySelector(`script[src="${ELFSIGHT_SRC}"]`)) return;
+      const s = document.createElement('script');
+      s.src = ELFSIGHT_SRC;
+      s.async = true;
+      s.setAttribute('data-use-service-core', '');
+      document.body.appendChild(s);
+    };
+    if (!('IntersectionObserver' in window)) {
+      load();
+      return undefined;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          load();
+          io.disconnect();
+        }
+      },
+      { rootMargin: '800px 0px' },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return ref;
+};
+
 const Contact = () => {
+  const instaRef = useElfsightWhenNear();
   const [form, setForm] = useState(emptyForm);
   const [status, setStatus] = useState({ state: 'idle', message: '' });
 
@@ -152,7 +188,7 @@ const Contact = () => {
               Follow <Arrow />
             </a>
           </Reveal>
-          <div className="insta-embed elfsight-app-bcdddf16-aa00-448f-8745-fb6762e5b41d" data-elfsight-app-lazy />
+          <div ref={instaRef} className="insta-embed elfsight-app-bcdddf16-aa00-448f-8745-fb6762e5b41d" data-elfsight-app-lazy />
         </div>
       </div>
     </section>
