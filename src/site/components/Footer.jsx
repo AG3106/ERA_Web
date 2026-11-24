@@ -28,7 +28,7 @@ const Footer = () => (
             <br />
             <span className="text-volt">building.</span>
           </p>
-          <a href={`mailto:${links.email}`} className="mt-8 inline-flex items-center gap-2 border-b-2 border-volt pb-1 font-mono text-sm text-chalk hover:text-volt">
+          <a href={`mailto:${links.email}`} className="mt-[14px] inline-flex items-center gap-2 border-b-2 border-volt pb-1 pt-[18px] font-mono text-sm text-chalk hover:text-volt">
             {links.email} <Arrow className="h-3.5 w-3.5" />
           </a>
         </div>

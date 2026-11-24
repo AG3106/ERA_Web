@@ -19,9 +19,9 @@ const ResearchPage = () => (
       <div className="container-site">
         <Reveal className="blueprint mb-16 grid grid-cols-3 border-2 border-ink">
           {stats.map((s) => (
-            <div key={s.label} className="border-r-2 border-ink/15 p-5 last:border-r-0 sm:p-8">
+            <div key={s.label} className="min-w-0 border-r-2 border-ink/15 px-3 py-5 last:border-r-0 sm:p-6 lg:p-8">
               <span className="block h-1 w-8 bg-volt" aria-hidden />
-              <p className="display mt-4 text-5xl text-ink sm:text-8xl">
+              <p className="display mt-4 text-4xl text-ink sm:text-6xl lg:text-8xl">
                 <Counter to={s.value} from={s.value > 100 ? s.value - 12 : 0} />
               </p>
               <p className="label mt-2 text-ink/60">{s.label}</p>

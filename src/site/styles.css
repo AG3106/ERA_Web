@@ -148,6 +148,9 @@ html.lenis body {
 .insta-embed {
   min-height: 200px;
 }
+.insta-embed:empty {
+  min-height: 0;
+}
 
 @keyframes blink {
   50% {

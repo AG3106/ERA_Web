@@ -187,8 +187,8 @@ const StackCard = ({ project, index, total, progress }) => {
           className="absolute inset-0 h-full w-full object-cover"
           style={{ scale: imgScale }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/20 to-ink/10" />
-        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-6 sm:p-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/95 via-ink/20 to-ink/10 sm:bg-gradient-to-t" />
+        <div className="absolute inset-x-0 top-0 flex items-end justify-between gap-6 p-6 sm:bottom-0 sm:top-auto sm:p-10">
           <div>
             <p className="label inline-block bg-volt px-2 py-1 text-ink">
               {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}

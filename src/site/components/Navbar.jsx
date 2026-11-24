@@ -48,6 +48,15 @@ const Navbar = () => {
 
   useEffect(() => setOpen(false), [pathname]);
 
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+
   const lenis = useLenis();
   useEffect(() => {
     if (open) lenis.current?.stop();
@@ -68,7 +77,7 @@ const Navbar = () => {
           }`}
         >
           <div className="container-site flex h-16 items-center justify-between gap-6 sm:h-[72px]">
-            <Link to="/" aria-label="ERA home" className="flex items-center gap-3">
+            <Link to="/" aria-label="ERA home" className="-m-2.5 flex items-center gap-3 p-2.5">
               <img src={logo} alt="ERA" className="h-6 w-auto sm:h-7" />
               <span className="label hidden border-l border-chalk/30 pl-3 text-chalk/70 lg:inline">IIT Kanpur</span>
             </Link>

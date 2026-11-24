@@ -40,11 +40,12 @@ const MemberCard = ({ member, index, role }) => (
       <p className="label text-turf">{role}</p>
       <h3 className="display mt-1 text-3xl leading-[0.9] text-ink">{member.name}</h3>
       {member.email && (
-        <a href={`mailto:${member.email}`} className="mt-1 block truncate font-mono text-[11px] text-ink/60 hover:text-flare">
-          {member.email}
+        <a href={`mailto:${member.email}`} className="mt-1 block break-words font-mono text-[11px] leading-snug text-ink/60 hover:text-flare">
+          {member.email.split('@')[0]}
+          <wbr />@{member.email.split('@')[1]}
         </a>
       )}
-      <div className="mt-3 flex gap-1.5">
+      <div className="mt-3 flex gap-1 sm:gap-1.5">
         {socialIcons.map(([key, Icon, label]) =>
           member[key] ? (
             <a
@@ -53,7 +54,7 @@ const MemberCard = ({ member, index, role }) => (
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${member.name} on ${label}`}
-              className="grid h-8 w-8 place-items-center bg-ink text-chalk transition-colors hover:bg-flare hover:text-ink"
+              className="grid h-10 w-10 place-items-center bg-ink sm:h-8 sm:w-8 text-chalk transition-colors hover:bg-flare hover:text-ink"
             >
               <Icon className="h-3.5 w-3.5" />
             </a>
