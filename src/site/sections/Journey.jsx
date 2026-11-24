@@ -44,6 +44,26 @@ const Ticket = ({ item, index }) => (
   </motion.article>
 );
 
+// Phones: the same ticket at about half the height. Year and category share a short
+// stub, so a dozen of them read as a list rather than a dozen screens.
+const CompactTicket = ({ item, index }) => (
+  <article className="ticket flex flex-col bg-chalk text-ink" style={{ '--notch': '64px' }}>
+    <div className="flex h-16 items-center justify-between gap-3 px-5">
+      <p className="display text-[2.6rem] leading-none">{item.year}</p>
+      <div className="flex flex-col items-end gap-1">
+        <span className={`label px-2 py-0.5 ${categoryStyle[item.category] ?? 'bg-ink text-chalk'}`}>{item.category}</span>
+        <span className="label text-ink/50">No. {String(index + 1).padStart(3, '0')}</span>
+      </div>
+    </div>
+    <div className="mx-4 border-t-2 border-dashed border-ink/30" />
+    <div className="px-5 pb-4 pt-3">
+      <h3 className="display text-2xl leading-[0.95]">{item.title}</h3>
+      <p className="label mt-1 text-turf">{item.location}</p>
+      <p className="mt-2 text-sm leading-snug text-ink/75">{item.description}</p>
+    </div>
+  </article>
+);
+
 // The journey runs through three eras, each with its own backdrop.
 const nextChapter = {
   year: '2026→',
@@ -246,21 +266,21 @@ const HorizontalTrack = () => {
 
 const VerticalList = () => (
   <div className="relative text-chalk md:hidden">
-    <div className="arena pt-24">
+    <div className="arena pt-20">
       <div className="container-site">
         <SectionHeading num="02" kicker="Year by year" title="The journey" />
       </div>
     </div>
     {eras.map((era, e) => (
-      <div key={era.id} className={`${era.bgMobile} relative overflow-hidden ${e === 0 ? 'pt-12' : 'pt-16'} ${e === eras.length - 1 ? 'pb-24' : 'pb-16'}`}>
+      <div key={era.id} className={`${era.bgMobile} relative overflow-hidden ${e === 0 ? 'pt-8' : 'pt-12'} ${e === eras.length - 1 ? 'pb-16' : 'pb-12'}`}>
         <div className="container-site">
-          <Reveal className="mb-8">
+          <Reveal className="mb-6">
             <EraCard era={era} />
           </Reveal>
-          <ol className="space-y-6">
+          <ol className="space-y-3">
             {numbered[e].map(({ item, index }) => (
               <Reveal as="li" key={`${item.year}-${item.title}`}>
-                <Ticket item={item} index={index} />
+                <CompactTicket item={item} index={index} />
               </Reveal>
             ))}
           </ol>
