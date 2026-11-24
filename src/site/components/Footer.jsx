@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { links, socials } from '../data/links';
 import { Arrow } from './motion';
+import goalEnd from '../assets/footer-goal-end.svg';
 
 const explore = [
   ['Projects', '/projects'],
@@ -14,6 +15,12 @@ const explore = [
 const Footer = () => (
   <footer className="relative overflow-hidden bg-ink">
     <div className="tech relative overflow-hidden">
+      <img
+        src={goalEnd}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-0 hidden h-full md:block"
+      />
       <div className="container-site relative grid gap-12 py-20 md:grid-cols-[1.5fr_1fr_1fr]">
         <div>
           <p className="display text-6xl text-chalk sm:text-7xl">
