@@ -269,20 +269,20 @@ export const PageHeader = ({ kicker, title, children, image }) => (
         className="label mb-6 flex items-center gap-3 text-volt"
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
       >
         <span className="h-2 w-2 bg-volt" />
         {kicker}
       </motion.p>
       <h1 className="display text-[clamp(4rem,15vw,13rem)] text-chalk">
-        <SplitText text={title} animateOnMount delay={0.45} stagger={0.08} />
+        <SplitText text={title} animateOnMount delay={0.15} stagger={0.08} />
       </h1>
       {children && (
         <motion.div
           className="mt-8 max-w-2xl text-lg leading-relaxed text-chalk/85"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8, ease: easeOut }}
+          transition={{ delay: 0.4, duration: 0.6, ease: easeOut }}
         >
           {children}
         </motion.div>

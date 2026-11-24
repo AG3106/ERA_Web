@@ -27,7 +27,7 @@ const Hero = () => {
           style={{ scale: imgScale, y: imgY }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.4, delay: 0.3 }}
+          transition={{ duration: 1, delay: 0 }}
           fetchpriority="high"
         />
         {/* Floodlight flare on load */}
@@ -36,7 +36,7 @@ const Hero = () => {
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(220,235,255,0.4),transparent_55%)] mix-blend-overlay"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 0.5] }}
-          transition={{ duration: 2.2, delay: 0.6, times: [0, 0.3, 1] }}
+          transition={{ duration: 2.2, delay: 0.3, times: [0, 0.3, 1] }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-transparent to-ink/90" />
 
@@ -48,7 +48,7 @@ const Hero = () => {
             className="group mb-6 flex w-fit items-stretch font-mono text-[11px] uppercase tracking-[0.12em] sm:text-xs"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.4, duration: 0.6, ease: easeOut }}
+            transition={{ delay: 0.9, duration: 0.6, ease: easeOut }}
           >
             <span className="flex items-center gap-2 bg-flare px-3 py-2 font-semibold text-ink">
               <span className="blink h-2 w-2 rounded-full bg-ink" /> Live
@@ -59,11 +59,11 @@ const Hero = () => {
           </motion.a>
 
           <h1 className="display text-[clamp(3.4rem,9vw,10rem)] text-chalk">
-            <SplitText text="Robots that" animateOnMount delay={0.9} stagger={0.07} />
+            <SplitText text="Robots that" animateOnMount delay={0.3} stagger={0.07} />
             <br />
-            <SplitText text="think and act" animateOnMount delay={1.1} stagger={0.07} />{' '}
+            <SplitText text="think and act" animateOnMount delay={0.45} stagger={0.07} />{' '}
             <span className="relative inline-block">
-              <SplitText text="on their own." animateOnMount delay={1.25} stagger={0.07} />
+              <SplitText text="on their own." animateOnMount delay={0.6} stagger={0.07} />
               <svg
                 viewBox="0 0 300 20"
                 preserveAspectRatio="none"
@@ -78,7 +78,7 @@ const Hero = () => {
                   strokeLinecap="round"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
-                  transition={{ delay: 1.9, duration: 0.7, ease: easeOut }}
+                  transition={{ delay: 1.2, duration: 0.7, ease: easeOut }}
                 />
               </svg>
             </span>
@@ -88,7 +88,7 @@ const Hero = () => {
             className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.6, duration: 0.8, ease: easeOut }}
+            transition={{ delay: 0.5, duration: 0.6, ease: easeOut }}
           >
             <p className="max-w-xl text-base leading-relaxed text-chalk/85 sm:text-lg">
               ERA (Équipe de Robotique Autonome) is IIT Kanpur&rsquo;s student team building fully autonomous
