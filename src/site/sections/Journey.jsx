@@ -47,7 +47,7 @@ const Ticket = ({ item, index }) => (
 // Phones: the same ticket at about half the height. Year and category share a short
 // stub, so a dozen of them read as a list rather than a dozen screens.
 const CompactTicket = ({ item, index }) => (
-  <article className="ticket flex flex-col bg-chalk text-ink" style={{ '--notch': '64px' }}>
+  <article className="ticket flex w-full flex-col bg-chalk text-ink" style={{ '--notch': '64px' }}>
     <div className="flex h-16 items-center justify-between gap-3 px-5">
       <p className="display text-[2.6rem] leading-none">{item.year}</p>
       <div className="flex flex-col items-end gap-1">
@@ -264,6 +264,7 @@ const HorizontalTrack = () => {
   );
 };
 
+// Phones: each era is a row of tickets you swipe sideways, with the next one peeking in.
 const VerticalList = () => (
   <div className="relative text-chalk md:hidden">
     <div className="arena pt-20">
@@ -277,14 +278,27 @@ const VerticalList = () => (
           <Reveal className="mb-6">
             <EraCard era={era} />
           </Reveal>
-          <ol className="space-y-3">
-            {numbered[e].map(({ item, index }) => (
-              <Reveal as="li" key={`${item.year}-${item.title}`}>
-                <CompactTicket item={item} index={index} />
-              </Reveal>
-            ))}
-          </ol>
+          {numbered[e].length > 1 && (
+            <p className="label mb-3 flex items-center gap-2 text-chalk/60" aria-hidden>
+              {numbered[e].length} entries · swipe <span className="text-volt">→</span>
+            </p>
+          )}
         </div>
+        <ol
+          className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain px-5 pb-2 sm:px-8"
+          style={{ scrollPaddingInline: '1.25rem' }}
+          data-lenis-prevent-touch
+          aria-label={`${era.name} achievements`}
+        >
+          {numbered[e].map(({ item, index }) => (
+            <li
+              key={`${item.year}-${item.title}`}
+              className={`flex shrink-0 snap-start ${numbered[e].length > 1 ? 'w-[82%] max-w-[340px]' : 'w-full'}`}
+            >
+              <CompactTicket item={item} index={index} />
+            </li>
+          ))}
+        </ol>
       </div>
     ))}
   </div>

@@ -160,3 +160,7 @@ html.lenis body {
 .blink {
   animation: blink 1.2s steps(1) infinite;
 }
+
+/* Sideways swipe rows (mobile journey): scroll without a visible bar */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
